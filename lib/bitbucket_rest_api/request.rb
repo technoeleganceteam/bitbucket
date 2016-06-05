@@ -41,6 +41,7 @@ module BitBucket
 
       response = conn.send(method) do |request|
         request['Authorization'] = "Bearer #{new_access_token}" unless new_access_token.nil?
+        request['Content-Type'] == 'application/json'
         case method.to_sym
         when *(METHODS - METHODS_WITH_BODIES)
           request.body = params.delete('data') if params.has_key?('data')
