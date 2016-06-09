@@ -173,7 +173,7 @@ module BitBucket
       filter! VALID_ISSUE_PARAM_NAMES, params
       assert_required_keys(%w[ title ], params)
 
-      post_request("/1.0/repositories/#{user}/#{repo.downcase}/issues/", params)
+      post_request("/2.0/repositories/#{user}/#{repo.downcase}/issues/", params)
     end
 
     # Edit an issue
