@@ -12,6 +12,7 @@ module BitBucket
                  :Following   => 'following',
                  :Sources     => 'sources',
                  :Forks       => 'forks',
+                 :Commit      => 'commit',
                  :Commits     => 'commits',
                  :Download    => 'download',
                  :Webhooks    => 'webhooks',
@@ -71,6 +72,9 @@ module BitBucket
     end
     def forks
       @forks ||= ApiFactory.new 'Repos::Forks'
+    end
+    def commit
+      @commit ||=ApiFactory.new 'Repos::Commit'
     end
     def commits
       @commits ||=ApiFactory.new 'Repos::Commits'
